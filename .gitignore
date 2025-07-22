@@ -1,0 +1,5 @@
+build/
+result/
+logs/
+lists/
+.vscode

@@ -1,14 +1,13 @@
-ROOT_CONFIG := /home/tahea/root_install/bin/root-config
-MCDST_DIR   := /home/tahea/smash_CF_builder/smash_CF_builder/sthbtmaker/StRoot
+ROOT_CONFIG := /home/ubuntu/root_install/bin
+MCDST_DIR   := /home/ubuntu/Temir/smash/build/data/sthbtmaker-repo/process
 
 CXX      := g++
 CXXFLAGS := -std=c++20 -fPIC -Wall \
-            $(shell $(ROOT_CONFIG) --cflags) \
-            -I$(MCDST_DIR)/McDst
+            $$( $(ROOT_CONFIG)/root-config --cflags ) \
+			-I/home/ubuntu/Temir/smash/build/data/sthbtmaker-repo/StRoot/McDst
 
-LDFLAGS  := $(shell $(ROOT_CONFIG) --ldflags)
-LDLIBS   := $(shell $(ROOT_CONFIG) --libs) \
-            -L$(MCDST_DIR)/libs -lMcDst
+LDFLAGS  := $$( $(ROOT_CONFIG)/root-config --ldflags )
+LDLIBS   := $$( $(ROOT_CONFIG)/root-config --libs )
 
 TARGET := cf_runner
 SRC    := cf_runner.cpp process_1d.cpp process_3d.cpp

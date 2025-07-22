@@ -109,7 +109,7 @@ void fillTrackCut(StHbtBasicTrackCut *trackCut,
   float dca[2] = { 0., 3. };
   float pT[2] = { 0.15,  1.5 };
   
-  float p[2] = { 0.0, 10.0 };
+  float p[2] = { 0.15, 1.5 };
   float eta[2] = { -1.5, 1.5 };
   float rap[2] = { -9999., 9999.}; // ideal world
 
@@ -225,7 +225,7 @@ void fillTrackPairCut(StHbtBasicPairCut *pairCut,
   float pT[2] = { 0., 1e5 };
   float openingAngle[2] = { -1e6, 1e6 };
   float entranceSeparation[2] = { 0., 1e6 };
-  float y[2] = { -1e5, 1e5 };
+  float y[2] = { -0.5, 0 }; // need to be changed to [-0.5, 0]
   float eta[2] = { -1e5, 1e5 };
   float qInv[2] = { -1e5, 1e5 };
   float mInv[2] = { 0., 1e5 };
@@ -380,7 +380,7 @@ int main(int argc, char *argv[]) {
   const int ChargeBins = 2; // 0 - positive, 1 - negative
   const int DetSelBins = 1;
   const int kTBins = 4;
-  const double kTRange[2] = { 0.15, 0.55 };
+  const double kTRange[2] = { 0.15, 0.6 };
   const int qInvNbins = 40;
   const double qInvRange[2] = { 0., 0.4 };
   const int bpNbins = 80;

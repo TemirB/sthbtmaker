@@ -3,3 +3,4 @@ result/
 logs/
 lists/
 .vscode
+*.root
